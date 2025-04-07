@@ -100,3 +100,20 @@
     background-color: #343454;
   }
   
+  .portrait {
+    width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 1rem auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Project image styling */
+  .project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
