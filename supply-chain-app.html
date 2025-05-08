@@ -8,7 +8,7 @@
 </head>
 <body class="dark">
   <header>
-    <h1>Supply Chain Database Application</h1>
+    <h1>Supply Chain Database App</h1>
     <nav>
       <a href="index.html">← Back to Portfolio</a>
     </nav>
@@ -18,7 +18,19 @@
     <section>
       <h2>Description</h2>
       <p>
-        This is a full-stack administrative application built for Global Bread Co., enabling management of customer orders, product inventory, and delivery tracking. The app features secure role-based access, a responsive frontend, and a well-structured backend for scalability and reliability.
+        This full-stack database application was designed for <strong>Global Bread Co.</strong>, a company aiming to generate $500,000 in revenue from over 1,000 sales across 60+ bread products with global cultural origins. The platform allows administrators to manage customers, bread products, sales, allergens, and regional cultures through a secure web interface.
+      </p>
+      <p>
+        A major design goal was ensuring accurate tracking of allergens and product origins. Two intersection tables, <code>soldProducts</code> and <code>allergensProducts</code>, were critical to this functionality and featured prominently in the “Sales” and “Allergens” pages respectively.
+      </p>
+      <p>
+        Key backend optimizations included converting all decimal attributes to <code>decimal(10,2)</code> to improve currency formatting, and adding ON DELETE SET NULL to the <code>productID</code> foreign key in <code>soldProducts</code> to preserve historical sales data even if a product was deleted.
+      </p>
+      <p>
+        The frontend UI features edit pages with dynamic dropdowns for related foreign keys and auto-calculation of line totals for each sale. The interface was styled using Bootstrap and custom CSS with warm, welcoming tones to reflect the brand identity.
+      </p>
+      <p>
+        Significant time was spent troubleshooting database-server connections, ultimately resolved by adding a helper function that establishes a connection before executing queries.
       </p>
     </section>
 
@@ -28,22 +40,27 @@
         <li>Python</li>
         <li>Flask</li>
         <li>HTML/CSS/JavaScript</li>
+        <li>Bootstrap</li>
         <li>MySQL / MariaDB</li>
-        <li>RESTful API</li>
         <li>Jinja2</li>
-        <li>Cloud Deployment</li>
+        <li>RESTful APIs</li>
       </ul>
     </section>
 
     <section>
-      <h2>Screenshots</h2>
-      <img src="images/supply_chain_app.png" alt="Supply Chain App Screenshot" style="max-width:100%; border-radius:6px;" />
+      <h2>Screenshots & Diagrams</h2>
+      <img src="images/supply_chain_app.png" alt="Application Screenshot" style="max-width:100%; border-radius:6px; margin-bottom:1rem;" />
+      <img src="images/schema.png" alt="Database Schema Diagram" style="max-width:100%; border-radius:6px; margin-bottom:1rem;" />
+      <img src="images/entity_relationship_diagram.png" alt="ER Diagram" style="max-width:100%; border-radius:6px; margin-bottom:1rem;" />
+      <img src="images/example_data.png" alt="Example Data Table" style="max-width:100%; border-radius:6px;" />
     </section>
 
     <section>
       <h2>GitHub Repository</h2>
       <p>
-        <a href="https://github.com/yourusername/supply-chain-app" target="_blank">github.com/yourusername/supply-chain-app</a>
+        <a href="https://github.com/yourusername/supply-chain-app" target="_blank">
+          github.com/yourusername/supply-chain-app
+        </a>
       </p>
     </section>
   </main>
