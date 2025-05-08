@@ -17,47 +17,47 @@
   <main>
     <section>
       <h2>Description</h2>
-      <p>
-        🎵 CNN Genre Classifier: Deep Learning for Music Genre Recognition
-        This project is a deep learning-based music genre classification system that leverages Convolutional Neural Networks (CNNs) to accurately identify the genre of audio tracks using MFCC (Mel-Frequency Cepstral Coefficients) features. Designed for scalability and efficiency, the system is built in Python using TensorFlow/Keras, and supports training on large datasets without exhausting system memory.
+      
+        <h3>🎵 CNN Genre Classifier: Deep Learning for Music Genre Recognition></h3>
+        <p>This project is a deep learning-based music genre classification system that leverages Convolutional Neural Networks (CNNs) to accurately identify the genre of audio tracks using MFCC (Mel-Frequency Cepstral Coefficients) features. Designed for scalability and efficiency, the system is built in Python using TensorFlow/Keras, and supports training on large datasets without exhausting system memory.</p>
         
-        🔍 Project Overview
-        At its core, the system processes a large collection of JSON files—each containing MFCC features and corresponding genre labels extracted from music samples. These features serve as a time-frequency representation of audio, making them ideal input for CNNs to learn genre-specific patterns.
+       <h3>🔍 Project Overview</h3>
+        <p>At its core, the system processes a large collection of JSON files—each containing MFCC features and corresponding genre labels extracted from music samples. These features serve as a time-frequency representation of audio, making them ideal input for CNNs to learn genre-specific patterns.</p>
         
-        ⚙️ Key Features
-        Efficient Data Handling: Utilizes a custom MFCCDataGenerator that inherits from tf.keras.utils.Sequence to load and preprocess data in batches during training. This enables training on datasets that would otherwise be too large to fit into memory.
+        <h3>⚙️ Key Features</h3>
+        <p>Efficient Data Handling: Utilizes a custom MFCCDataGenerator that inherits from tf.keras.utils.Sequence to load and preprocess data in batches during training. This enables training on datasets that would otherwise be too large to fit into memory.</p>
         
-        Dynamic Batch Size Estimation: Automatically estimates a safe and optimal batch size based on available system memory using the psutil library, ensuring stability and performance even on low-resource machines.
+        <p>Dynamic Batch Size Estimation: Automatically estimates a safe and optimal batch size based on available system memory using the psutil library, ensuring stability and performance even on low-resource machines.</p>
         
-        CNN Architecture: The model consists of stacked convolutional, max pooling, batch normalization, and dropout layers, followed by fully connected dense layers. This architecture is tailored for image-like MFCC data and is effective at capturing hierarchical audio features.
+        <p>CNN Architecture: The model consists of stacked convolutional, max pooling, batch normalization, and dropout layers, followed by fully connected dense layers. This architecture is tailored for image-like MFCC data and is effective at capturing hierarchical audio features.</p>
         
-        Balanced Training: Implements automatic class weight calculation to counteract imbalanced genre distributions, improving model fairness and generalization.
+        <p>Balanced Training: Implements automatic class weight calculation to counteract imbalanced genre distributions, improving model fairness and generalization.</p>
         
-        Modular and Scalable Design: Cleanly separated functions for model building, data loading, training, and evaluation make the project easy to understand, extend, and deploy.
+        <p>Modular and Scalable Design: Cleanly separated functions for model building, data loading, training, and evaluation make the project easy to understand, extend, and deploy.</p>
         
-        📁 Input Format
-        Directory of .json files, where each file contains:
+        <h3>📁 Input Format</h3>
+        <p>Directory of .json files, where each file contains:</p>
         
-        "mfcc": A list of MFCC samples (e.g., 130 frames × 13 coefficients)
+        <p>"mfcc": A list of MFCC samples (e.g., 130 frames × 13 coefficients)</p>
         
-        "labels": Corresponding integer labels
+        <p>"labels": Corresponding integer labels</p>
         
-        "mapping": A list mapping class indices to genre names
+        <p>"mapping": A list mapping class indices to genre names</p>
         
-        🧠 Output
-        A trained Keras model saved as an .h5 file (cnn_genre_classifier_v1.2.h5)
+        <h3>🧠 Output</h3>
+        <p>A trained Keras model saved as an .h5 file (cnn_genre_classifier_v1.2.h5)</p>
         
-        Console logs reporting training progress, batch size, and evaluation metrics
+        <p>Console logs reporting training progress, batch size, and evaluation metrics</p>
         
-        💻 Applications
-        Music genre tagging and cataloging
+        <h3>💻 Applications</h3>
+        <p>Music genre tagging and cataloging</p>
         
-        Music recommendation systems
+        <p>Music recommendation systems</p>
         
-        Educational tools for audio signal processing
+        <p>Educational tools for audio signal processing</p>
         
-        Research in computational musicology and audio classification
-      </p>
+        <p>Research in computational musicology and audio classification</p>
+      
     </section>
 
     <section>
@@ -75,7 +75,7 @@
 
     <section>
       <h2>Screenshots</h2>
-      <img src="images/genre_classifier.png" alt="Model Accuracy Visualization" style="max-width:100%; border-radius:6px;" />
+      <img src="images/music genre classification model diagram.jpg" alt="Model Diagram" style="max-width:100%; border-radius:6px;" />
       <!-- Add more images if you like -->
     </section>
 
