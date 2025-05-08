@@ -18,7 +18,45 @@
     <section>
       <h2>Description</h2>
       <p>
-        This project implements a convolutional neural network (CNN) for classifying music into genres based on extracted audio features. The model uses Mel-Frequency Cepstral Coefficients (MFCCs) for input and is trained and evaluated using TensorFlow and Keras.
+        🎵 CNN Genre Classifier: Deep Learning for Music Genre Recognition
+        This project is a deep learning-based music genre classification system that leverages Convolutional Neural Networks (CNNs) to accurately identify the genre of audio tracks using MFCC (Mel-Frequency Cepstral Coefficients) features. Designed for scalability and efficiency, the system is built in Python using TensorFlow/Keras, and supports training on large datasets without exhausting system memory.
+        
+        🔍 Project Overview
+        At its core, the system processes a large collection of JSON files—each containing MFCC features and corresponding genre labels extracted from music samples. These features serve as a time-frequency representation of audio, making them ideal input for CNNs to learn genre-specific patterns.
+        
+        ⚙️ Key Features
+        Efficient Data Handling: Utilizes a custom MFCCDataGenerator that inherits from tf.keras.utils.Sequence to load and preprocess data in batches during training. This enables training on datasets that would otherwise be too large to fit into memory.
+        
+        Dynamic Batch Size Estimation: Automatically estimates a safe and optimal batch size based on available system memory using the psutil library, ensuring stability and performance even on low-resource machines.
+        
+        CNN Architecture: The model consists of stacked convolutional, max pooling, batch normalization, and dropout layers, followed by fully connected dense layers. This architecture is tailored for image-like MFCC data and is effective at capturing hierarchical audio features.
+        
+        Balanced Training: Implements automatic class weight calculation to counteract imbalanced genre distributions, improving model fairness and generalization.
+        
+        Modular and Scalable Design: Cleanly separated functions for model building, data loading, training, and evaluation make the project easy to understand, extend, and deploy.
+        
+        📁 Input Format
+        Directory of .json files, where each file contains:
+        
+        "mfcc": A list of MFCC samples (e.g., 130 frames × 13 coefficients)
+        
+        "labels": Corresponding integer labels
+        
+        "mapping": A list mapping class indices to genre names
+        
+        🧠 Output
+        A trained Keras model saved as an .h5 file (cnn_genre_classifier_v1.2.h5)
+        
+        Console logs reporting training progress, batch size, and evaluation metrics
+        
+        💻 Applications
+        Music genre tagging and cataloging
+        
+        Music recommendation systems
+        
+        Educational tools for audio signal processing
+        
+        Research in computational musicology and audio classification
       </p>
     </section>
 
