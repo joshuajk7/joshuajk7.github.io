@@ -1,106 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarpaulin Course Management API</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 40px;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        h1 {
-            font-size: 2.8em;
-            color: #2c3e50;
-        }
-        h2 {
-            color: #2980b9;
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        .highlight {
-            background-color: #eef6fc;
-            padding: 10px 15px;
-            border-left: 4px solid #2980b9;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarpaulin Course Management API</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <header>
-        <h1>Tarpaulin Course Management API</h1>
-        <p><em>A Scalable, Secure RESTful API Deployed on Google Cloud Platform</em></p>
-    </header>
+<body class="dark">
+  <header>
+    <h1>Tarpaulin Course Management API</h1>
+    <nav>
+      <a href="index.html">← Back to Portfolio</a>
+    </nav>
+  </header>
 
+  <main>
     <section>
-        <h2>Project Overview</h2>
-        <p>The <strong>Tarpaulin API</strong> is a secure and scalable course management backend system, developed as a cloud-native RESTful service using <strong>Python (Flask)</strong>, <strong>Google App Engine</strong>, and <strong>Google Cloud Datastore</strong>. The project models a lightweight alternative to traditional LMS systems like Canvas and supports user roles such as <strong>admin</strong>, <strong>instructor</strong>, and <strong>student</strong>.</p>
+      <h2>Description</h2>
+      <p>
+        The <strong>Tarpaulin API</strong> is a secure and scalable course management backend system, developed as a cloud-native RESTful service using <strong>Python (Flask)</strong>, <strong>Google App Engine</strong>, and <strong>Google Cloud Datastore</strong>. 
+        The project models a lightweight alternative to traditional LMS systems like Canvas and supports user roles such as <strong>admin</strong>, <strong>instructor</strong>, and <strong>student</strong>.
+      </p>
     </section>
 
     <section>
-        <h2>Key Features</h2>
-        <ul>
-            <li><strong>13 RESTful API endpoints</strong> supporting CRUD operations for users, courses, and enrollment data</li>
-            <li>Role-based access control using <strong>JWT and Auth0</strong> for secure authentication and authorization</li>
-            <li><strong>Avatar upload and download</strong> functionality integrated with <strong>Google Cloud Storage</strong></li>
-            <li>Datastore modeling for users, roles, courses, and relationships using advanced filtering and pagination</li>
-            <li>Comprehensive <strong>error handling</strong> for common HTTP error responses (401, 403, 404, etc.)</li>
-            <li>Deployed and maintained on <strong>Google App Engine</strong> for high availability and scalability</li>
-        </ul>
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>13 RESTful API endpoints</strong> supporting CRUD operations for users, courses, and enrollment data</li>
+        <li>Role-based access control using <strong>JWT and Auth0</strong> for secure authentication and authorization</li>
+        <li><strong>Avatar upload and download</strong> functionality integrated with <strong>Google Cloud Storage</strong></li>
+        <li>Datastore modeling for users, roles, courses, and relationships using advanced filtering and pagination</li>
+        <li>Comprehensive <strong>error handling</strong> for common HTTP error responses (401, 403, 404, etc.)</li>
+        <li>Deployed and maintained on <strong>Google App Engine</strong> for high availability and scalability</li>
+      </ul>
     </section>
 
     <section>
-        <h2>Technologies Used</h2>
-        <ul>
-            <li>Backend: <strong>Python 3, Flask</strong></li>
-            <li>Cloud Platform: <strong>Google Cloud Platform (App Engine, Datastore, Cloud Storage)</strong></li>
-            <li>Authentication: <strong>Auth0 with OAuth 2.0 / JWT</strong></li>
-            <li>Testing: <strong>Postman</strong> with automated assertions and environmental variables</li>
-        </ul>
+      <h2>Technologies Used</h2>
+      <ul class="tech-list">
+        <li>Python 3</li>
+        <li>Flask</li>
+        <li>Google Cloud Platform (App Engine, Datastore, Cloud Storage)</li>
+        <li>Auth0 (OAuth 2.0 / JWT)</li>
+        <li>Postman</li>
+      </ul>
     </section>
 
     <section>
-        <h2>Security & Architecture Highlights</h2>
-        <div class="highlight">
-            <ul>
-                <li>Only authorized users can perform actions based on their assigned roles (e.g., students cannot manage courses).</li>
-                <li>All endpoints validate tokens using public keys from Auth0's JWKS endpoint, preventing forgery.</li>
-                <li>Avatar uploads use secure signed URLs and are validated before being saved in cloud storage.</li>
-                <li>All sensitive operations are protected with scoped permissions and granular checks at the route level.</li>
-            </ul>
-        </div>
+      <h2>Security & Architecture Highlights</h2>
+      <ul>
+        <li>Only authorized users can perform actions based on their assigned roles (e.g., students cannot manage courses).</li>
+        <li>All endpoints validate tokens using public keys from Auth0's JWKS endpoint, preventing forgery.</li>
+        <li>Avatar uploads use secure signed URLs and are validated before being saved in cloud storage.</li>
+        <li>All sensitive operations are protected with scoped permissions and granular checks at the route level.</li>
+      </ul>
     </section>
 
     <section>
-        <h2>Learning Outcomes & Impact</h2>
-        <p>This project strengthened my experience in:</p>
-        <ul>
-            <li>Building <strong>production-ready APIs</strong> with real-world authentication and cloud deployments</li>
-            <li>Implementing <strong>RBAC (Role-Based Access Control)</strong> and protecting endpoints with JWT verification</li>
-            <li>Designing scalable <strong>datastore schemas and relationships</strong> in a NoSQL context</li>
-            <li>Working with <strong>Google Cloud APIs</strong> programmatically (Datastore, Storage)</li>
-        </ul>
+      <h2>Learning Outcomes & Impact</h2>
+      <p>This project strengthened my experience in:</p>
+      <ul>
+        <li>Building <strong>production-ready APIs</strong> with real-world authentication and cloud deployments</li>
+        <li>Implementing <strong>RBAC (Role-Based Access Control)</strong> and protecting endpoints with JWT verification</li>
+        <li>Designing scalable <strong>datastore schemas and relationships</strong> in a NoSQL context</li>
+        <li>Working with <strong>Google Cloud APIs</strong> programmatically (Datastore, Storage)</li>
+      </ul>
     </section>
 
     <section>
-        <h2>Project Link</h2>
-        <p><strong>Live Deployment:</strong> <a href="https://kimjo8-project6.uc.r.appspot.com" target="_blank">https://kimjo8-project6.uc.r.appspot.com</a></p>
-        <p><strong>Source Code:</strong> Available upon request or on GitHub (private during development)</p>
+      <h2>Project Links</h2>
+      <p><strong>Live Deployment:</strong> 
+        <a href="https://kimjo8-project6.uc.r.appspot.com" target="_blank">https://kimjo8-project6.uc.r.appspot.com</a>
+      </p>
+      <p><strong>Source Code:</strong> Available upon request or on GitHub (private during development)</p>
     </section>
+  </main>
 
-    <footer>
-        <p>Developed by Joshua Kim | <em>Cloud Application Developer</em></p>
-    </footer>
+  <footer>
+    <p>© 2025 Joshua Kim. All rights reserved.</p>
+  </footer>
 </body>
 </html>
