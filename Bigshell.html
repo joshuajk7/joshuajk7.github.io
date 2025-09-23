@@ -1,178 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BigShell — Joshua Kim</title>
-  <meta name="description" content="BigShell — a POSIX-inspired shell implementation (CS 374). Project summary, features, implementation details, and links." />
-  <style>
-    :root{--accent:#0b69ff;--muted:#6b7280;--card:#ffffff;--bg:#f7fafc;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%);color:#0f172a;font-family:var(--font,Inter),sans-serif;line-height:1.5}
-    header{background:radial-gradient(circle at 10% 10%,rgba(11,105,255,.08),transparent 20%),white;padding:48px 20px;border-bottom:1px solid #eef2f7}
-    .container{max-width:980px;margin:0 auto}
-    .hero{display:flex;gap:24px;align-items:center}
-    .title{font-size:28px;font-weight:700;margin:0}
-    .subtitle{color:var(--muted);margin:6px 0 0}
-    .badges{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
-    .badge{background:#eef2ff;color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
-    main{padding:28px 20px}
-    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,.06);margin-bottom:18px}
-    h2{margin-top:0}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
-    .section-list{list-style:none;padding:0;margin:12px 0}
-    .section-list li{padding:6px 0;border-bottom:1px dashed #eef2f7}
-    pre{background:#0f172a;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto}
-    footer{padding:28px 20px;color:var(--muted);font-size:14px}
-    .cta-row{display:flex;gap:12px;margin-top:14px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
-    .btn-primary{background:var(--accent);color:white}
-    .btn-ghost{border:1px solid #e6eef8;background:white;color:var(--accent)}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}.hero{flex-direction:column;align-items:flex-start}.title{font-size:22px}}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BigShell Project</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="dark">
   <header>
-    <div class="container">
-      <div class="hero">
-        <div style="flex:1">
-          <h1 class="title">BigShell</h1>
-          <p class="subtitle">A POSIX-inspired command-line shell implementation — CS 374 Operating Systems I<br>Created by Joshua Kim</p>
-          <div class="badges">
-            <span class="badge">C</span>
-            <span class="badge">GCC</span>
-            <span class="badge">POSIX</span>
-            <span class="badge">Job Control</span>
-            <span class="badge">I/O Redirection</span>
-          </div>
-        </div>
-        <div style="text-align:right">
-          <p style="margin:0;color:var(--muted)">Date of submission</p>
-          <strong>Nov 29, 2024</strong>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#details">View details</a>
-            <a class="btn btn-ghost" href="#download">Download PDF</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h1>BigShell</h1>
+    <nav>
+      <a href="index.html">← Back to Portfolio</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <div class="grid">
-      <section>
-        <article class="card" id="details">
-          <h2>Project Overview</h2>
-          <p>BigShell is a lightweight command-line interpreter that implements a meaningful subset of POSIX shell functionality. It demonstrates core systems programming concepts: process creation and control, signal handling, input/output redirection, job control, and environment/variable handling.</p>
+  <main>
+    <section>
+      <h2>Description</h2>
+      <p>
+        BigShell is a lightweight command-line interpreter that implements a meaningful subset of POSIX shell functionality. It demonstrates core systems programming concepts: process creation and control, signal handling, input/output redirection, job control, and environment/variable handling.
+      </p>
+      <p>
+        This project showcases practical experience with low-level system calls and concurrency primitives used in UNIX-like operating systems. It’s a strong example of systems-level programming and debugging in a production-like workflow.
+      </p>
+      <p>
+        Key features include:
+        <ul>
+          <li>Interactive REPL with command parsing and comments/escaping support</li>
+          <li>Builtin commands: <code>cd</code>, <code>exit</code></li>
+          <li>I/O redirection: <code>&lt;</code>, <code>&gt;</code>, <code>&gt;&gt;</code></li>
+          <li>Background jobs with <code>&amp;</code> and job tracking</li>
+          <li>Variable and parameter expansion: <code>$$</code>, <code>$!</code>, <code>$?</code>, <code>${VAR}</code></li>
+          <li>Signal handling (SIGINT, SIGTSTP) and robust child management</li>
+        </ul>
+      </p>
+    </section>
 
-          <h3>Why it matters</h3>
-          <p>This project showcases practical experience with low-level system calls and concurrency primitives used in UNIX-like operating systems. It’s a strong example of systems-level programming and debugging in a production-like workflow.</p>
-
-          <h3>Core features</h3>
-          <ul class="section-list">
-            <li>Interactive REPL with command parsing and comments/escaping support</li>
-            <li>Builtin commands: <code>cd</code>, <code>exit</code></li>
-            <li>I/O redirection: <code>&lt;</code>, <code>&gt;</code>, <code>&gt;&gt;</code></li>
-            <li>Background jobs with <code>&amp;</code> and job tracking</li>
-            <li>Variable and parameter expansion: <code>$$</code>, <code>$!</code>, <code>$?</code>, <code>${VAR}</code></li>
-            <li>Signal handling (SIGINT, SIGTSTP) and robust child management</li>
-          </ul>
-
-          <h3>Project structure</h3>
-          <p>The codebase is separated into logical modules for maintainability and clarity:</p>
-          <ul>
-            <li><strong>bigshell.c</strong> — main REPL, startup, and loop</li>
-            <li><strong>parser.c</strong> — tokenization and parsing of commands</li>
-            <li><strong>runner.c</strong> — execution, I/O redirection, and builtins</li>
-            <li><strong>jobs.c</strong> — job control and tracking</li>
-            <li><strong>signals.c</strong> — signal setup, handlers, and restore logic</li>
-            <li><strong>vars.c</strong> — environment and shell variable management</li>
-          </ul>
-
-          <h3>Build & run</h3>
-          <p>Typical build / run commands used during development:</p>
-          <pre>make
-# or to compile directly
-gcc -Wall -Wextra -std=gnu11 -o bigshell *.c</pre>
-
-          <h3>Testing & tools</h3>
-          <p>Development used Git for version control, a Makefile for builds, and GDB for debugging. Automated grading scripts (GradeScope) were used during assignment submission.</p>
-        </article>
-
-        <article class="card">
-          <h2>Implementation highlights</h2>
-          <p>Selected design decisions that highlight engineering judgment:</p>
-          <ul>
-            <li>Modular code layout to separate parsing, execution, and signal handling — easier to test and debug.</li>
-            <li>Explicit environment variable handling so child processes receive exported variables.</li>
-            <li>Careful use of <code>waitpid</code> with flags <code>WNOHANG</code> and <code>WUNTRACED</code> to track background/foreground and stopped children.</li>
-            <li>Signal masks and <code>sigaction</code> usage to prevent the shell from exiting while delivering signals to child processes.</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h2>Challenges & lessons</h2>
-          <p>Key challenges included:</p>
-          <ul>
-            <li>Managing job control and correctly restoring process group and signal state.</li>
-            <li>Debugging tricky race conditions with child processes and signal delivery.</li>
-            <li>Time management and iterative testing — breaking the project into smaller deliverables helped.</li>
-          </ul>
-
-          <p>Lessons learned: plan early, test incrementally, and rely on system debuggers (GDB) when dealing with memory or control-flow issues.</p>
-        </article>
-
-        <article class="card">
-          <h2>Conclusion & next steps</h2>
-          <p>BigShell meets the assignment's goals and serves as a foundation for additional features. Potential improvements for future versions include:</p>
-          <ul>
-            <li>Adding pipeline support (<code>|</code>) and shell scripting constructs.</li>
-            <li>Improving job control builtins (e.g., <code>jobs</code>, <code>fg</code>, <code>bg</code>).</li>
-            <li>Enhanced error reporting and unit tests for parser components.</li>
-          </ul>
-        </article>
-      </section>
-
-      <aside>
-        <div class="card" id="download">
-          <h3>Quick facts</h3>
-          <p><strong>Language:</strong> C<br><strong>Tools:</strong> GCC, GDB, Make, Git</p>
-          <h4>Project files</h4>
-          <ul>
-            <li>bigshell.c</li>
-            <li>parser.c</li>
-            <li>runner.c</li>
-            <li>jobs.c, signals.c, vars.c</li>
-            <li>Makefile</li>
-          </ul>
-
-          <h4>Download</h4>
-          <p>If you'd like the original PDF included in this portfolio, upload it to your website root and update the link below.</p>
-          <a class="btn btn-primary" href="/path/to/BigShell_Report.pdf" download>Download project PDF</a>
-
-          <h4 style="margin-top:14px">Source & Demo</h4>
-          <p>Link your GitHub repository (replace the URL below):</p>
-          <a class="btn btn-ghost" href="https://github.com/your-username/bigshell" target="_blank">View source on GitHub</a>
-        </div>
-
-        <div class="card">
-          <h4>Contact</h4>
-          <p>Joshua Kim<br>kimjo8@oregonstate.edu</p>
-          <p style="font-size:13px;color:var(--muted)">Want changes? I can update this page: highlight specific sections, add screenshots, or embed code samples.</p>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <footer class="container">
-    <div class="card">
-      <strong>References</strong>
+    <section>
+      <h2>Project Structure</h2>
       <ul>
-        <li>POSIX Shell Command Language — The Open Group</li>
-        <li>GCC &amp; GDB documentation</li>
-        <li>Course: CS 374 — Operating Systems I</li>
+        <li><strong>bigshell.c</strong> — main REPL, startup, and loop</li>
+        <li><strong>parser.c</strong> — tokenization and parsing of commands</li>
+        <li><strong>runner.c</strong> — execution, I/O redirection, and builtins</li>
+        <li><strong>jobs.c</strong> — job control and tracking</li>
+        <li><strong>signals.c</strong> — signal setup, handlers, and restore logic</li>
+        <li><strong>vars.c</strong> — environment and shell variable management</li>
+        <li><strong>Makefile</strong></li>
       </ul>
-    </div>
-  </footer>
-</body>
-</html>
+    </section>
+
+    <section>
+      <h2>Technologies Used</h2>
+      <ul class="tech-list">
+        <li>C</li>
+        <li>GCC</li>
+        <li>GDB</li>
+        <li>POSIX system calls</li>
+        <li>Makefile</li>
+        <li>Git</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Implementation Highlights</h2>
+      <p>
+        <ul>
+          <li>Modular code layout to separate parsing, execution, and signal handling — easier to test and debug.</li>
+          <li>Explicit environment variable handling so child processes receive exported variables.</li>
+          <li>Careful use of <code>waitpid</code> with flags <code>WNOHANG</code> and <code>WUNTRACED</code> to track background/foreground and stopped children.</li>
+          <li>Signal masks and <code>sigaction</code> usage to prevent the shell from exiting while delivering signals to child processes.</li>
+        </ul>
+      </p>
+    </section>
+
+    <section>
+      <h2>Challenges & Lessons</h2>
