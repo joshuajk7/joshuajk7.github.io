@@ -30,15 +30,13 @@
   }
 
 .job-header {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between; /* pushes text left, logo right */
-  gap: 12px;
-  margin-top: 10px;
+  gap: 8px;
 }
 
 .company-logo {
-  height: 28px; /* adjust so it matches the text height */
+  height: 48px; /* adjust so it matches the text height */
   width: auto;
   object-fit: contain;
 }
