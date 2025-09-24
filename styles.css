@@ -28,6 +28,26 @@
     padding: 1.5rem;
     text-align: center;
   }
+
+.job-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes text left, logo right */
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.company-logo {
+  height: 28px; /* adjust so it matches the text height */
+  width: auto;
+  object-fit: contain;
+}
+
+.date {
+  margin: 2px 0 10px 0;
+  color: #aaa;
+  font-size: 0.9em;
+}
   
   nav a {
     color: white;
