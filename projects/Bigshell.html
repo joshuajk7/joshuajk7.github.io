@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BigShell Project</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="dark">
+  <header>
+    <h1>BigShell</h1>
+    <nav>
+      <a href="../index.html">← Back to Portfolio</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Description</h2>
+      <p>
+        BigShell is a lightweight command-line interpreter that implements a meaningful subset of POSIX shell functionality. It demonstrates core systems programming concepts: process creation and control, signal handling, input/output redirection, job control, and environment/variable handling.
+      </p>
+      <p>
+        This project showcases practical experience with low-level system calls and concurrency primitives used in UNIX-like operating systems. It’s a strong example of systems-level programming and debugging in a production-like workflow.
+      </p>
+      <p>
+        Key features include:
+        <ul>
+          <li>Interactive REPL with command parsing and comments/escaping support</li>
+          <li>Builtin commands: <code>cd</code>, <code>exit</code></li>
+          <li>I/O redirection: <code>&lt;</code>, <code>&gt;</code>, <code>&gt;&gt;</code></li>
+          <li>Background jobs with <code>&amp;</code> and job tracking</li>
+          <li>Variable and parameter expansion: <code>$$</code>, <code>$!</code>, <code>$?</code>, <code>${VAR}</code></li>
+          <li>Signal handling (SIGINT, SIGTSTP) and robust child management</li>
+        </ul>
+      </p>
+    </section>
+
+    <section>
+      <h2>Project Structure</h2>
+      <ul>
+        <li><strong>bigshell.c</strong> — main REPL, startup, and loop</li>
+        <li><strong>parser.c</strong> — tokenization and parsing of commands</li>
+        <li><strong>runner.c</strong> — execution, I/O redirection, and builtins</li>
+        <li><strong>jobs.c</strong> — job control and tracking</li>
+        <li><strong>signals.c</strong> — signal setup, handlers, and restore logic</li>
+        <li><strong>vars.c</strong> — environment and shell variable management</li>
+        <li><strong>Makefile</strong></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technologies Used</h2>
+      <ul class="tech-list">
+        <li>C</li>
+        <li>GCC</li>
+        <li>GDB</li>
+        <li>POSIX system calls</li>
+        <li>Makefile</li>
+        <li>Git</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Implementation Highlights</h2>
+      <p>
+        <ul>
+          <li>Modular code layout to separate parsing, execution, and signal handling — easier to test and debug.</li>
+          <li>Explicit environment variable handling so child processes receive exported variables.</li>
+          <li>Careful use of <code>waitpid</code> with flags <code>WNOHANG</code> and <code>WUNTRACED</code> to track background/foreground and stopped children.</li>
+          <li>Signal masks and <code>sigaction</code> usage to prevent the shell from exiting while delivering signals to child processes.</li>
+        </ul>
+      </p>
+    </section>
+
+    <section>
+      <h2>Challenges & Lessons</h2>
+      <p>Implemented robust child management and signal handling; learned edge cases in job control and safe use of async-signal-safe functions.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Joshua Kim. All rights reserved.</p>
+  </footer>
+</body>
+</html>
